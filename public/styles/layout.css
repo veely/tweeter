@@ -30,7 +30,6 @@ body {
 .container {
   background-color: white;
   margin: 81px auto 0;
-  height: 500px;
   width: 450px;
   padding: 2em;
 }
@@ -42,13 +41,6 @@ body {
   border-radius: 10px;
   margin: 20px auto 0;
   opacity: .5;
-}
-
-.container article footer div {
-  width: 15%;
-  float: right;
-  opacity: 0;
-  padding: 5px 0 0 5px;
 }
 
 .container article:hover {
@@ -71,7 +63,7 @@ body {
 
 .container article header h2 {
   padding: 10px;
-  width: 40%;
+  width: 70%;
   margin: 0;
   float: left
 }
@@ -100,6 +92,14 @@ body {
   width: 20%;
   font-size: .8em;
   margin: 5px 0 5px 0;
+}
+
+
+.container article footer div {
+  width: 15%;
+  float: right;
+  opacity: 0;
+  padding: 5px 0 0 5px;
 }
 
 .container article header p {
