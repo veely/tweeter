@@ -5,6 +5,8 @@
  */
 html {
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -20,6 +22,87 @@ body {
   background-color: #eee;
 }
 
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  background-color: white;
+  margin: 81px auto 0;
+  height: 500px;
+  width: 450px;
+  padding: 2em;
+}
+
+.container article {
+  background-color: #e5e5e5;
+  border: solid #bfbfbf;
+  border-width: thin;
+  border-radius: 10px;
+  margin: 20px auto 0;
+  opacity: .5;
+}
+
+.container article footer div {
+  width: 15%;
+  float: right;
+  opacity: 0;
+  padding: 5px 0 0 5px;
+}
+
+.container article:hover {
+  opacity: 1;
+}
+
+.container article:hover footer div {
+  opacity: 1;
+}
+
+.container article header {
+  background-color: #e5e5e5;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  border-width: thin;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.container article header h2 {
+  padding: 10px;
+  width: 40%;
+  margin: 0;
+  float: left
+}
+
+.container article h3 {
+  font-weight: normal;
+  margin: 0;
+  padding: 30px 10px 30px 10px;
+  background-color: white;
+}
+
+.container article footer {
+  background-color: white;
+  margin: 0;
+  padding: 0 10px 0 10px;
+  height: 30px;
+  width: 100%;
+  border-top: solid #bfbfbf;
+  border-width: thin;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container article footer p {
+  float: left;
+  width: 20%;
+  font-size: .8em;
+  margin: 5px 0 5px 0;
+}
+
+.container article header p {
+  width: 20%;
+  float: right;
+}
