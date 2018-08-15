@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  const textbox = document.getElementById('textBox');
+  const textbox = $('#textBox');
   let counter = 140;
 
   function countChar() {
-    let num = counter - this.value.length;
+    let num = counter - $(this).val().length;
     const textCounter = $(this).siblings(".counter");
     if (num >= 0) {
       textCounter.css("color", "black");
@@ -13,6 +13,6 @@ $(document).ready(function() {
     $(this).siblings(".counter").text(num);
   }
 
-  textbox.addEventListener('keyup', countChar);
+  textbox.on("input", countChar);
 });
 

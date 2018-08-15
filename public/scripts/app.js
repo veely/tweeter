@@ -52,6 +52,14 @@ $(document).ready(function() {
     }
   ];
 
+  function loadTweets() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      console.log('Success: ', tweets);
+    });
+  }
+
+  loadTweets();
 
   function renderTweets(data) {
     for(tweet of data) {
@@ -74,7 +82,11 @@ $(document).ready(function() {
         <h3>${content}</h3>
         <footer>
           <p>${diffDays} days ago</p>
-          <div id="buttons">test</div>
+          <div id="buttons">
+            <a href="/" class="fas fa-flag"></a>
+            <a href="/" class="fas fa-retweet"></a>
+            <a href="/" class="fas fa-heart"></a>
+          </div>
         </footer>
       </article>
       `;
@@ -87,14 +99,3 @@ $(document).ready(function() {
   console.log($tweet); // to see what it looks like
   $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 });
-// <article class="tweet">
-//   <header>
-//     <h2>Tweet Title</h2>
-//     <p>@Diesel</p>
-//   </header>
-//   <h3>Your tweet here</h3>
-//   <footer>
-//     <p>10 days ago</p>
-//     <div id="buttons">test</div>
-//   </footer>
-// </article>
