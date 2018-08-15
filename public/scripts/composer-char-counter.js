@@ -3,6 +3,7 @@ $(document).ready(function() {
   let counter = 140;
 
   function countChar() {
+    $(".errorMessage").css("display", "none");
     let num = counter - $(this).val().length;
     const textCounter = $(this).siblings(".counter");
     if (num >= 0) {
