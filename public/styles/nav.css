@@ -21,3 +21,8 @@
   line-height: 2.5em;
   padding-left: 10px;
 }
+
+#nav-bar .button {
+  float: right;
+  margin-top: 25px;
+}

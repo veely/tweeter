@@ -36,6 +36,7 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button class="button">Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -50,28 +51,37 @@
       </section>
 
       <section id="tweets-container">
-        <article class="tweet">
-          <header>
-            <h2>Name</h2>
-            <p>@name</p>
-          </header>
-          <h3>My tweet</h3>
-          <footer>
-            <p>10 days ago</p>
-            <div id="buttons">
-              <a href="/" class="fas fa-flag"></a>
-              <a href="/" class="fas fa-retweet"></a>
-              <a href="/" class="fas fa-heart"></a>
-            </div>
-          </footer>
-        </article>
+
       </section>
     </main>
     <script>
-    $( ".container section form input" ).click(function( event ) {
+    $( "section.new-tweet form input" ).click(function( event ) {
       event.preventDefault();
-      var data = $( this ).serialize();
-      $.post("tweet", data);
+      var escape = function(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
+      var tweetBox = $("section.new-tweet form #textBox");
+      var textFromUser = $(tweetBox).val();
+
+      const safeHTML = `${escape(textFromUser)}`;
+      $(tweetBox).val(safeHTML);
+
+      if ($(tweetBox).val().length > 0) {
+        if ($(tweetBox).val().length <= 140) {
+          var data = $(tweetBox).serialize();
+          $.post("tweets", data, function(){
+            loadTweets();
+            $(tweetBox).val("");
+          });
+        } else {
+          alert("Your tweet exceeded the maximum amount of characters! (max. 140)");
+        }
+      } else {
+        alert("Your tweet cannot be empty!");
+      }
+
     });
     </script>
 
