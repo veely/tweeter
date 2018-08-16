@@ -17,6 +17,7 @@ $(document).ready(function() {
         var data = $(tweetBox).serialize();
         $.post("tweets", data, function(){
           loadTweets();
+          $(".container #counter").text("140");
           $(tweetBox).val("");
         });
       } else {
