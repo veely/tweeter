@@ -24,5 +24,20 @@
 
 #nav-bar .button {
   float: right;
-  margin-top: 25px;
+}
+
+#nav-bar .login {
+  font-size: 14px;
+  width: 120px;
+  height: 20px;
+}
+
+#nav-bar form {
+  float: left;
+}
+
+#nav-bar div {
+  padding: 25px;
+  float: right;
+  width: 500px;
 }
