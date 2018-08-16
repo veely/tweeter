@@ -18,3 +18,7 @@ Tweeter is a single-page Twitter clone. Front-end includes jQuery, HTML, CSS, JS
 - MongoDB
 
 ## Screenshots
+
+![Focusing on tweet when mouse is hovering over it.](https://github.com/veely/tweeter/blob/master/docs/hover-tweet.png?raw=true)
+![Error when user doesn't enter anything and clicks tweet.](https://github.com/veely/tweeter/blob/master/docs/no-input.png?raw=true)
+![Error when user tries to enter too much in the tweet box.](https://github.com/veely/tweeter/blob/master/docs/too-many-characters.png)
