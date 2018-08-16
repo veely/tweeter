@@ -31,10 +31,9 @@ module.exports = function makeDataHelpers(db) {
 
         fetchTweets((err, tweets) => {
           if (err) throw err;
-          callback(null, tweets.sort(sortNewestFirst));
+          callback(null, tweets.sort(sortNewestFirst).reverse());
         });
       });
     }
-
   };
 }

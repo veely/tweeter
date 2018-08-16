@@ -24,9 +24,10 @@
     let dateCreated = new Date(data.created_at);
     let currentDate = new Date();
     let diffDays = parseInt((Date.parse(currentDate) - Date.parse(dateCreated)) / (1000 * 60 * 60 * 24));
+    let avatarUrl = data.user.avatars.small;
     let html = `
       <article class="tweet">
-        <header><h2>${name}</h2>
+        <header><img class="avatar" src=${avatarUrl}><h2>${name}</h2>
           <p>${handle}</p>
         </header>
         <h3>${content}</h3>
@@ -51,11 +52,6 @@ $(document).ready(function() {
       $("#textBox").focus();
     });
   });
+
   loadTweets();
-
-  // var $tweet = renderTweets(data);
-
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 });

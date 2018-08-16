@@ -18,7 +18,7 @@
 .container article header {
   background-color: #e5e5e5;
   padding: 0;
-  height: 50px;
+  height: 70px;
   width: 100%;
   border-width: thin;
   border-top-left-radius: 10px;
@@ -26,8 +26,8 @@
 }
 
 .container article header h2 {
-  padding: 10px;
-  margin: 0;
+  padding: 0;
+  margin: 12px 5px 12px 2px;
   float: left
 }
 
@@ -76,4 +76,10 @@
   margin: 0 8px 0 8px;
   text-decoration: none;
   color: #00a087;
+}
+
+.container .avatar {
+  float: left;
+  margin: 10px 10px 10px 10px;
+  border-radius: 5px;
 }
