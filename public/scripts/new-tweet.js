@@ -15,6 +15,7 @@ $(document).ready(function() {
     if ($(tweetBox).val().length > 0) {
       if ($(tweetBox).val().length <= 140) {
         var data = $(tweetBox).serialize();
+        console.log(data);
         $.post("tweets", data, function(){
           loadTweets();
           $(".container #counter").text("140");

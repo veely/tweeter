@@ -15,6 +15,10 @@
     for(tweet of data) {
       $('#tweets-container').append(createTweetElement(tweet));
     }
+      $(".tweet a").click(function(event) {
+        event.preventDefault();
+        console.log($(this).parents(".tweet").children("header").children("p").text());
+      });
   }
 
   function createTweetElement(data) {
@@ -28,15 +32,15 @@
     let html = `
       <article class="tweet">
         <header><img class="avatar" src=${avatarUrl}><h2>${name}</h2>
-          <p>${handle}</p>
+          <p id="test">${handle}</p>
         </header>
         <h3>${content}</h3>
         <footer>
           <p>${diffDays} days ago</p>
           <div id="buttons">
-            <a href="/" class="fas fa-flag"></a>
-            <a href="/" class="fas fa-retweet"></a>
-            <a href="/" class="fas fa-heart"></a>
+            <a href="flag" id="flag" class="fas fa-flag"></a>
+            <a href="retweet" id="retweet" class="fas fa-retweet"></a>
+            <a href="like" id="like" class="fas fa-heart"></a>
           </div>
         </footer>
       </article>
